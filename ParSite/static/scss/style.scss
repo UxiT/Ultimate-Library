@@ -1,0 +1,241 @@
+$palette: (
+  primary:#004def,
+  bg_grad1: #43CBFF,
+  bg_grad2:#9708CC,
+  btn-grad1: #2AFADF,
+  btn-grad2: #4C83FF,
+  dark-black: #343434
+);
+
+@function color($color){
+  @return map-get($palette, $color)
+}
+$Brandon: "Brandon Grotesque";
+
+html{
+  padding: 0;
+  margin: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "TT Norms";
+  font-weight: 500;
+  height: 100%;
+  display: grid;
+
+  #back{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-image: linear-gradient(to right, color(bg_grad1) 10%, color(bg_grad2) 120%);
+  }
+}
+
+a{
+  text-decoration: none;
+
+  &:visited{
+    text-decoration: none;
+    color: color(dark-black);
+  }
+}
+
+.nav{
+  background-color: #fff;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+
+  span{
+    font-family: 'Berkshire Swash';
+    font-size: 37px;
+    display: inline-flex;
+    margin: 40px;
+  }
+
+  ul{
+
+    li{
+      list-style-type: none;
+      float: left;
+      font-weight: 400;
+      padding-left: 40px;
+    }
+  }
+}
+
+
+
+
+
+.modal{
+  display: block;
+}
+
+.login{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-top: 3vh;
+  margin-right: 5vw;
+  #auth{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+  }
+}
+.pageBtn{
+  background: none;
+  border:none;
+  outline: none;
+  font-family: $Brandon;
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.close{
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 0;
+  padding: 0, 3px;
+  margin: 5px;
+  transform: scale(1.2);
+  color: #535353;
+  i{
+    z-index: -1;
+  }
+}
+
+.login-form{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  height: 697px;
+  background-color: white;
+  border-radius: 10px;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  .container{
+    padding: 40px 65px;
+  }
+    h1{
+    padding: 32px 0;
+    margin: 0;
+    color: #343434;
+    background-color: white;
+    letter-spacing: -0.11em;                   ;
+    }
+    .txtb{
+      border-bottom: 1px solid #adadad;
+      position: relative;
+      margin: 30px 0;
+      .insert{
+        display: flex;
+        flex-direction: row;
+        input{
+          border: none;
+          outline: none;
+          width: 100%;
+          height: 30px;
+          margin-left: 16px;
+          font-family: $Brandon;
+          font-size: 16px;
+          &::placeholder{
+            color: #cccccc;
+            font-family: $Brandon;
+            font-weight: 350;
+          }
+          &:focus{
+            color: #343434;
+            font-family: $Brandon;
+            font-size: 16px;
+          }
+        }
+        span{
+          font-weight: 200;
+          color: #cccccc;
+          position: absolute;
+          top: 50%;
+          left: 30px;
+          z-index: -1;
+        }
+        .fas{
+          color: #727272;
+          margin-top: 6px;
+          margin-left: 5px;
+          transform: scale(0.7);
+        }
+      }
+      }
+      p{
+        font-family: "Brandon Grotesque";
+        color: #727272;
+        font-size: 13px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 0;
+        padding-left: 5px;
+      }
+    .logbtn{
+      width: 100%;
+      border:none;
+      display: block;
+      position: relative;
+      background-image: linear-gradient(150deg, color(btn-grad1), color(btn-grad2));
+      background-size: 150%;
+      height: 40px;
+      border-radius: 25px;
+      font-family: $Brandon;
+      text-transform: uppercase;
+      color: #FAFAFA;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 56px;
+      -webkit-box-shadow: 4px 0px 25px 3px rgba(121,208,234,0.38);
+      transition: 0.5s ease-in;
+      &:hover{
+        background-position: right;
+      }
+    }
+}
+.reg{
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  bottom: 0;
+  font-size: 12px;
+  font-family: $Brandon;
+  font-style: normal;
+  font-weight: normal;
+  a{
+  text-decoration: none;
+  color: #343434;
+
+  &:visited{
+    color: #343434;
+  }
+  }
+}
+
+
+input[type="text"]{
+  font-size: 14px;
+}

@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #e7ecef;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Frame {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cardTitle {
+    position: absolute;
+    font-family: "Brandon Grotesque";
+    font-size: 4em;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .card {
+    transform: translateY(5%);
+  }
+}
+
+.group {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  //background-image: url('Button-back.png');
+  cursor: pointer;
+  span {
+    font-family: "Brandon Grotesque";
+    font-size: 4em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .group-inner {
+    background: rgba(0, 0, 0, 0.35);
+    width: inherit;
+    height: inherit;
+    transition: 0.5s ease-in;
+    &:hover {
+      border: 1px solid #c5bcff;
+    }
+  }
+}
+
+.frame {
+  position: absolute;
+  width: 266px;
+  height: 376px;
+
+  background: #e7ecef;
+  box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
+  border-radius: 10px;
+}
+
+.frame-inner {
+  position: absolute;
+  width: 250px;
+  height: 353px;
+
+  background: #ebf5fa;
+  box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44),
+    inset -4px -4px 16px rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  background: red;
+}

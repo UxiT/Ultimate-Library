@@ -1,0 +1,241 @@
+body{
+  margin: 0;
+  padding: 0;
+  width:100vh;
+  font-family: "Franxurter Totally Fat";
+  font-weight: 500;}
+
+#back{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(186deg,#cbb4d4 10%,#310641 120%);
+  /*background-image: linear-gradient(to top, #fdcbf1 0%, #fccaf0 1%, #e6dee9 100%);*/
+}
+.login{
+  display: flex;
+  position: relative;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 50px;
+  /*background: #001f3f;*/
+}
+a:visited{
+  text-decoration: none;
+  color: #FCFFFA;
+}
+.navbar{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  padding-top:40px;
+  top: 20%;
+}
+.wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.button{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+/*
+.button a{
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 55px;
+  margin: 10px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.button a span{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  border:1px solid black;
+  transition: 0s ease-in;
+}
+
+.button a:before{
+  content: '';
+  position: absolute;
+  bottom: -250px;
+  width: 250px;
+  height: 250px;
+  background-color: #FAACA8;
+background-image: -webkit-linear-gradient(199deg, #FAACA8 0%, #DDD6F3 100%);
+background-image: -o-linear-gradient(199deg, #FAACA8 0%, #DDD6F3 100%);
+background-image: linear-gradient(289deg, #FAACA8 0%, #DDD6F3 100%);
+  border-radius: 50%;
+  transition: 0.4s ease-in;
+}
+
+.button a:hover:before{
+  bottom: -150px;
+}
+.button a:nth-child(1):before{
+	bottom: 60px;
+}
+
+.button a:nth-child(1):hover:before{
+	bottom: -40px;
+}
+*/
+
+
+.button{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.button a{
+	position: relative;
+	width: 150px;
+	height: 55px;
+	text-align: center;
+	line-height: 55px;
+	margin: 10px;
+	text-transform: uppercase;
+	color: white;
+	font-size:30px;
+	font-weight: 500;
+	text-decoration: none;
+	letter-spacing: 2px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.button a span{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+	transition: 0s ease-in;
+}
+
+.button a:before{
+	content: '';
+	position: absolute;
+	bottom: -250px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 250px;
+	height: 250px;
+  background-color: #FAACA8;
+background-image: -webkit-linear-gradient(199deg, #FAACA8 0%, #DDD6F3 100%);
+background-image: -o-linear-gradient(199deg, #FAACA8 0%, #DDD6F3 100%);
+background-image: linear-gradient(289deg, #FAACA8 0%, #DDD6F3 100%);
+	border-radius: 50%;
+	transition: 0.4s ease-in;
+}
+
+.button a:hover:before{
+	bottom:-150px;
+}
+
+.button a:nth-child(2):before{
+	bottom: 60px;
+}
+
+.button a:nth-child(2):hover:before{
+	bottom: -40px;
+}
+
+form{
+  position: absolute;
+  display:
+}
+.login-form{
+  width: 360px;
+  height: 460px;
+  background: rgb(222,220,220);
+background: radial-gradient(circle, rgba(241,241,241,0.7) 0%, rgba(241,241,241,0.2) 120%);
+  padding: 40px 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 4px solid #f1f1f1;
+}
+
+.login-form h1{
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.txtb{
+border-bottom: 2px solid #adadad;
+position: relative;
+margin: 30px 0;
+}
+
+.txtb input{
+  border:none;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  width: 100%;
+  background: none;
+  padding: 0 5px;
+  height: 40px;
+}
+
+.txtb span::before{
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #9a9a9a;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.txtb span::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-image:  linear-gradient(186deg,#cbb4d4 10%,#20002c 120%);
+}
+
+.logbtn{
+  cursor: pointer;
+  border: none;
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient( 135deg, #FAB2FF 10%, #9658b5 100%);
+  font-family: "Franxurter Totally Fat";
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200%;
+  border-radius: 5px;
+}
+.logbtn:hover{
+  background-position: right;
+}

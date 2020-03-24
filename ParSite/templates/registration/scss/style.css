@@ -1,0 +1,205 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "TT Norms";
+  font-weight: 500;
+  height: 100%;
+}
+
+body #back {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background-image: linear-gradient(to right, #43CBFF 10%, #9708CC 120%);
+}
+
+.modal {
+  display: block;
+}
+
+.modal1 {
+  display: none;
+}
+
+.login {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-top: 3vh;
+  margin-right: 5vw;
+}
+
+.login #auth {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 1em;
+}
+
+.pageBtn {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Brandon Grotesque";
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 0;
+  padding: 0, 3px;
+  margin: 5px;
+  transform: scale(1.2);
+  color: #535353;
+}
+
+.close i {
+  z-index: -1;
+}
+
+.login-form {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  height: 697px;
+  background-color: white;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.login-form .container {
+  padding: 40px 65px;
+}
+
+.login-form h1 {
+  padding: 32px 0;
+  margin: 0;
+  color: #343434;
+  background-color: white;
+  letter-spacing: -0.11em;
+}
+
+.login-form .txtb {
+  border-bottom: 1px solid #adadad;
+  position: relative;
+  margin: 30px 0;
+}
+
+.login-form .txtb .insert {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-form .txtb .insert input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  margin-left: 16px;
+  font-family: "Brandon Grotesque";
+  font-size: 16px;
+}
+
+.login-form .txtb .insert input::placeholder {
+  color: #cccccc;
+  font-family: "Brandon Grotesque";
+  font-weight: 350;
+}
+
+.login-form .txtb .insert input:focus {
+  color: #343434;
+  font-family: "Brandon Grotesque";
+  font-size: 16px;
+}
+
+.login-form .txtb .insert span {
+  font-weight: 200;
+  color: #cccccc;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  z-index: -1;
+}
+
+.login-form .txtb .insert .fas {
+  color: #727272;
+  margin-top: 6px;
+  margin-left: 5px;
+  transform: scale(0.7);
+}
+
+.login-form p {
+  font-family: "Brandon Grotesque";
+  color: #727272;
+  font-size: 13px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.login-form .logbtn {
+  width: 100%;
+  border: none;
+  display: block;
+  position: relative;
+  background-image: linear-gradient(150deg, #2AFADF, #4C83FF);
+  background-size: 150%;
+  height: 40px;
+  border-radius: 25px;
+  font-family: "Brandon Grotesque";
+  text-transform: uppercase;
+  color: #FAFAFA;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 56px;
+  -webkit-box-shadow: 4px 0px 25px 3px rgba(121, 208, 234, 0.38);
+  transition: 0.5s ease-in;
+}
+
+.login-form .logbtn:hover {
+  background-position: right;
+}
+
+.reg {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  bottom: 0;
+  font-size: 12px;
+  font-family: "Brandon Grotesque";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.reg a {
+  text-decoration: none;
+  color: #343434;
+}
+
+.reg a:visited {
+  color: #343434;
+}
+
+input[type="text"] {
+  font-size: 14px;
+}

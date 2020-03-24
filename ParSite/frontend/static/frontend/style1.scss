@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #e7ecef;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  width: 60vw;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .Frame {
+    width: 266px;
+    height: 376px;
+    .frame {
+      width: inherit;
+      height: inherit;
+      transform: scale(1);
+      background: #e7ecef;
+      box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
+      border-radius: 10px;
+      .frame-inner {
+        position: relative;
+        top: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        height: 277px;
+        background: #ebf5fa;
+        box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44),
+          inset -4px -4px 16px rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.switch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: #ebf5fa;
+  box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32),
+    -2px -2px 4px rgba(255, 255, 255, 0.75),
+    -2px -2px 4px rgba(255, 255, 255, 0.75);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.prev {
+  bottom: 0;
+  transform: translate(120%, -50%);
+}
+
+.next {
+  right: 0;
+  bottom: 0;
+  transform: translate(-120%, -50%);
+}
+
+svg {
+  background: none;
+}
+
+.TitleWrap {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  background: none;
+  font-family: "Brandon Grotesque";
+  color: #434343;
+}
+
+.lg {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  font-size: 4em;
+}
+
+.md {
+  font-size: 2em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  background: #ebf5fa;
+  box-shadow: 20px 20px 41px #c5ced2, -20px -20px 41px #ffffff;
+  &:hover {
+    background: #ebf5fa;
+    box-shadow: inset 20px 20px 17px #d4dde1, inset -20px -20px 17px #ffffff;
+  }
+}

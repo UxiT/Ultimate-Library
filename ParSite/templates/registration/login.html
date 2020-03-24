@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'scss/style.css' %}">
+  <script src="https://kit.fontawesome.com/cad759f546.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div id = "back"></div>
+<div id="modalLogForm" class="modal">
+    <form class="login-form" action="index.html">
+      <button type="button" name="button" class="close">
+        <i class="fas fa-times" id="close">
+        </i>
+      </button>
+      <div class="container">
+      <h1>L o g i n</h1>
+      <div class="txtb">
+        <p class="login-form-tag">Username</p>
+        <div class="insert">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Type your username here">
+          </div>
+      </div>
+      <div class="txtb">
+        <p class="login-form-tag">Password</p>
+        <div class="insert">
+          <i class="fas fa-key"></i>
+          <input type="password" placeholder="Type your password here">
+          </div>
+      </div>
+      <input type="submit" value="Login" class="logbtn">
+        <a href=""><p id="restore">Forgot password?</p></a>
+      <div class="reg">
+        <p>Don't have an account?</p>
+        <a href="#" id="sign">SIGN UP</a>
+      </div>
+      </div>
+    </form>
+</div>
+<div id="modalRegForm" class="modal1">
+    <form class="login-form" action="index.html">
+      <button type="button" name="button" class="close">
+        <i class="fas fa-times" id="closereg">
+        </i>
+      </button>
+      <div class="container">
+      <h1 id="RegTitle">R e g i s t e r</h1>
+      <div class="txtb">
+        <p class="login-form-tag">Username</p>
+        <div class="insert">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Type your username here">
+          </div>
+      </div>
+      <div class="txtb">
+        <p class="login-form-tag">E-mail</p>
+        <div class="insert">
+          <i class="fas fa-key"></i>
+          <input type="password" placeholder="Type your password here">
+          </div>
+      </div>
+      <div class="txtb">
+        <p class="login-form-tag">Password</p>
+        <div class="insert">
+          <i class="fas fa-key"></i>
+          <input type="password" placeholder="Type your password here">
+          </div>
+      </div>
+      <div class="txtb">
+        <p class="login-form-tag">Repeat password</p>
+        <div class="insert">
+          <i class="fas fa-key"></i>
+          <input type="password" placeholder="Type your password here">
+          </div>
+      </div>
+      <input type="submit" value="Register" class="logbtn">
+      </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="{% static 'js/main.js' %}" ></script>
+</body>
+</html>
