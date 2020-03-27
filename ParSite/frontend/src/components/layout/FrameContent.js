@@ -1,14 +1,12 @@
 import React, { Component } from "react";
+import Dropdown from "./Dropdown.js";
 
 export class FrameContent extends Component {
   render() {
     let classNext = "switch next";
     let classPrev = "switch prev";
     return (
-      <div className="frame-inner">
-        <div className={this.props.name}>
-          <span className="md">Preview</span>
-        </div>
+      <div className="switches">
         <div className={classPrev}>
           <svg
             width="12"

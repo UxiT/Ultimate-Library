@@ -62,7 +62,10 @@ svg {
 
 .TitleWrap {
   display: flex;
-  justify-content: center; }
+  position: relative;
+  justify-content: center;
+  height: 20%;
+  margin-top: 4%; }
 
 span {
   background: none;
@@ -73,7 +76,7 @@ span {
   margin-left: auto;
   margin-right: auto;
   position: absolute;
-  font-size: 4em; }
+  font-size: 3em; }
 
 .md {
   font-size: 2em;
@@ -90,10 +93,11 @@ span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -70%);
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: red; }
 
 .button {
   cursor: pointer;
@@ -102,7 +106,68 @@ span {
   height: 100px;
   border-radius: 10px;
   background: #ebf5fa;
-  box-shadow: 20px 20px 41px #c5ced2, -20px -20px 41px #ffffff; }
+  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff; }
   .button:hover {
     background: #ebf5fa;
-    box-shadow: inset 20px 20px 17px #d4dde1, inset -20px -20px 17px #ffffff; }
+    box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1; }
+    .button:hover .md {
+      transform: scale(0.95); }
+
+.Cards {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  background: #ebf5fa;
+  box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  transition: 0.5s ease-in-out; }
+
+/*
+.frame-inner:hover .Cards {
+  clip-path: circle(75%);
+  opacity: 1;
+}
+*/
+.dropdown {
+  position: absolute;
+  width: 60%;
+  height: 20%;
+  background: #ebf5fa;
+  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .dropdown .preview-wrapper {
+    cursor: pointer;
+    background: none;
+    display: flex;
+    flex-direction: row; }
+    .dropdown .preview-wrapper .triangle {
+      margin: auto;
+      margin-left: 0.5rem; }
+
+#has-drop {
+  background: none;
+  cursor: pointer;
+  opacity: 0; }
+  #has-drop ul {
+    opacity: 1;
+    list-style: none;
+    background: none;
+    z-index: 200; }
+    #has-drop ul li {
+      font-family: "Brandon Grotesque";
+      background: inherit; }
+
+.no-triangle {
+  display: none; }
+
+.triangle {
+  background: none;
+  margin-left: 10px;
+  margin-top: 5px; }
+  .triangle i {
+    transform: scale(1.5);
+    color: #ebf5fa;
+    background: none;
+    filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff); }

@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import FrameContent from "./FrameContent";
+import Button from "./Button";
+import Cards from "./Cards";
+import Dropdown from "./Dropdown";
 
 export class Nav extends Component {
   render() {
-    let classNext = "switch next";
-    let classPrev = "switch prev";
     return (
       <div className="wrapper">
         <div className="Frame">
           <div className="frame">
-            <FrameContent name="preview button" />
+            <div className="frame-inner">
+              <Button />
+              <FrameContent name="preview button" triangle="no-triangle" />
+            </div>
             <div className="TitleWrap">
               <span className="lg"> Buttons </span>
             </div>
@@ -18,7 +22,10 @@ export class Nav extends Component {
 
         <div className="Frame">
           <div className="frame">
-            <FrameContent />
+            <div className="frame-inner">
+              <Cards />
+              <FrameContent name="preview button" triangle="no-triangle" />
+            </div>
             <div className="TitleWrap">
               <span className="lg"> Cards </span>
             </div>
@@ -27,9 +34,12 @@ export class Nav extends Component {
 
         <div className="Frame">
           <div className="frame">
-            <FrameContent />
+            <div className="frame-inner">
+              <Dropdown />
+              <FrameContent name="preview button" triangle="no-triangle" />
+            </div>
             <div className="TitleWrap">
-              <span className="lg"> Sldiers </span>
+              <span className="lg"> Dropdown </span>
             </div>
           </div>
         </div>
