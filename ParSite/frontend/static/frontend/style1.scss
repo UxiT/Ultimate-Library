@@ -7,6 +7,8 @@
 
 $innerback: #ebf5fa;
 $font: "Brandon Grotesque";
+$sliderLight: #E1EBF1;
+$sliderBackLight : #E7ECEF;
 
 .wrapper {
   position: absolute;
@@ -15,10 +17,13 @@ $font: "Brandon Grotesque";
   transform: translate(-50%, -50%);
   display: inline-flex;
   width: 60vw;
+  height: 80%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-flow: wrap;
   .Frame {
+    margin-top: 10%;
     width: 266px;
     height: 376px;
     .frame {
@@ -116,7 +121,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
+  background: $innerback;
 }
 
 .button {
@@ -162,6 +167,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  z-index: 10;
   .preview-wrapper {
     cursor: pointer;
     background: none;
@@ -173,16 +179,32 @@ span {
     }
   }
 }
+
+.letters{
+  width: 100%;
+  height: 50%;
+  background:none;
+}
+
 #has-drop {
-  background: none;
+  background: $innerback;
+  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
   cursor: pointer;
   opacity: 0;
+  width: 100%;
+  z-index: 10;
   ul {
+    margin:0;
     opacity: 1;
     list-style: none;
     background: none;
     z-index: 200;
+    z-index: 9;
     li {
+      z-index: 9;
+      color: #434343;
+      text-align: center;
+      font-size: 1.5rem;
       font-family: $font;
       background: inherit;
     }
@@ -203,4 +225,70 @@ span {
     background: none;
     filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
   }
+}
+
+//Dark mode
+
+.Dark-mode{
+  position: relative;
+  right: 0;
+  transform: translate(-60%, 50%);
+  display: inline-flex;
+  flex-direction: row;
+  span{
+    font-family: $Brandon;
+  }
+}
+
+//Checkbox
+
+.checkbox{
+position: relative;
+display: inline-block;
+width: 5vw;
+height: 5vh;
+right: 0;
+background: none;
+border-radius: 50px;
+
+input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+
+input:checked{
+  .trigger{
+    background-color: #FD9C58;
+  }
+}
+
+input:checked +.trigger::before {
+  transform: translateX(120%);
+}
+
+
+
+.trigger{
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $sliderBackLight ;
+  box-shadow:inset -3px -3px 10px #ffffff,inset 3px 3px 10px rgba($color: #000000, $alpha: 0.25) ;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  &:before{
+    position: absolute;
+    content:'';
+    height:5vh;
+    width: 5vh;
+    background: $sliderLight;
+    border-radius: 50px;
+    box-shadow: -3px -3px 8px #ffffff, 3px 3px 12px rgba($color: #314159, $alpha: 0.43);
+    transition: 0.5s ease-in-out;
+
+  }
+}
+
 }

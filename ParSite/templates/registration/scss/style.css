@@ -16,6 +16,7 @@ body #back {
   width: 100%;
   height: 100vh;
   z-index: -2;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #43CBFF), color-stop(120%, #9708CC));
   background-image: linear-gradient(to right, #43CBFF 10%, #9708CC 120%);
 }
 
@@ -36,8 +37,10 @@ body #back {
 }
 
 .login #auth {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
   grid-column-gap: 1em;
 }
 
@@ -62,7 +65,8 @@ body #back {
   right: 0;
   padding: 0, 3px;
   margin: 5px;
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   color: #535353;
 }
 
@@ -79,7 +83,8 @@ body #back {
   height: 697px;
   background-color: white;
   border-radius: 10px;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -102,8 +107,13 @@ body #back {
 }
 
 .login-form .txtb .insert {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .login-form .txtb .insert input {
@@ -114,6 +124,24 @@ body #back {
   margin-left: 16px;
   font-family: "Brandon Grotesque";
   font-size: 16px;
+}
+
+.login-form .txtb .insert input::-webkit-input-placeholder {
+  color: #cccccc;
+  font-family: "Brandon Grotesque";
+  font-weight: 350;
+}
+
+.login-form .txtb .insert input:-ms-input-placeholder {
+  color: #cccccc;
+  font-family: "Brandon Grotesque";
+  font-weight: 350;
+}
+
+.login-form .txtb .insert input::-ms-input-placeholder {
+  color: #cccccc;
+  font-family: "Brandon Grotesque";
+  font-weight: 350;
 }
 
 .login-form .txtb .insert input::placeholder {
@@ -141,7 +169,8 @@ body #back {
   color: #727272;
   margin-top: 6px;
   margin-left: 5px;
-  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
 }
 
 .login-form p {
@@ -149,9 +178,16 @@ body #back {
   color: #727272;
   font-size: 13px;
   font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0;
   padding-left: 5px;
 }
@@ -172,6 +208,7 @@ body #back {
   cursor: pointer;
   margin-top: 56px;
   -webkit-box-shadow: 4px 0px 25px 3px rgba(121, 208, 234, 0.38);
+  -webkit-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
 }
 
@@ -183,7 +220,8 @@ body #back {
   position: absolute;
   display: block;
   left: 50%;
-  transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
   bottom: 0;
   font-size: 12px;
   font-family: "Brandon Grotesque";
@@ -203,3 +241,4 @@ body #back {
 input[type="text"] {
   font-size: 14px;
 }
+/*# sourceMappingURL=style.css.map */

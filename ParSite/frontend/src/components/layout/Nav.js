@@ -3,6 +3,8 @@ import FrameContent from "./FrameContent";
 import Button from "./Button";
 import Cards from "./Cards";
 import Dropdown from "./Dropdown";
+import Letters from "./letters";
+
 
 export class Nav extends Component {
   render() {
@@ -43,6 +45,19 @@ export class Nav extends Component {
             </div>
           </div>
         </div>
+
+        <div className="Frame">
+          <div className="frame">
+            <div className="frame-inner">
+              <Letters/>
+              <FrameContent name="preview button" triangle="no-triangle" />
+            </div>
+            <div className="TitleWrap">
+              <span className="lg"> Text </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }
