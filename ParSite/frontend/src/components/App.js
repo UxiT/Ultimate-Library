@@ -7,7 +7,7 @@ import Switch from "./layout/Switch";
 class App extends Component {
   render() {
     return(
-      <div>
+      <div className = 'void'>
         <Switch />     
         <Nav />
        </div>

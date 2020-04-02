@@ -2,13 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #e7ecef;
+  background: $bgLight;
 }
 
-$innerback: #ebf5fa;
+
+$bgLight: #e7ecef;
+$innerback: $innerback;
 $font: "Brandon Grotesque";
 $sliderLight: #E1EBF1;
 $sliderBackLight : #E7ECEF;
+$fontLight: #434343;
 
 .wrapper {
   position: absolute;
@@ -30,7 +33,7 @@ $sliderBackLight : #E7ECEF;
       width: inherit;
       height: inherit;
       transform: scale(1);
-      background: #e7ecef;
+      background: $bgLight;
       box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
       border-radius: 10px;
       .frame-inner {
@@ -40,7 +43,7 @@ $sliderBackLight : #E7ECEF;
         transform: translateX(-50%);
         width: 250px;
         height: 277px;
-        background: #ebf5fa;
+        background: $innerback;
         box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44),
           inset -4px -4px 16px rgba(255, 255, 255, 0.9);
         border-radius: 10px;
@@ -57,7 +60,7 @@ $sliderBackLight : #E7ECEF;
   position: absolute;
   align-items: center;
   justify-content: center;
-  background: #ebf5fa;
+  background: $innerback;
   box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32),
     -2px -2px 4px rgba(255, 255, 255, 0.75),
     -2px -2px 4px rgba(255, 255, 255, 0.75);
@@ -91,7 +94,7 @@ svg {
 span {
   background: none;
   font-family: $font;
-  color: #434343;
+  color: $fontLight;
 }
 
 .lg {
@@ -130,10 +133,10 @@ span {
   width: 200px;
   height: 100px;
   border-radius: 10px;
-  background: #ebf5fa;
+  background: $innerback;
   box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
   &:hover {
-    background: #ebf5fa;
+    background: $innerback;
     box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
     .md {
       transform: scale(0.95);
@@ -145,7 +148,7 @@ span {
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  background: #ebf5fa;
+  background: $innerback;
   box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
   transition: 0.5s ease-in-out;
 }
@@ -227,18 +230,6 @@ span {
   }
 }
 
-//Dark mode
-
-.Dark-mode{
-  position: relative;
-  right: 0;
-  transform: translate(-60%, 50%);
-  display: inline-flex;
-  flex-direction: row;
-  span{
-    font-family: $Brandon;
-  }
-}
 
 //Checkbox
 
@@ -247,9 +238,11 @@ position: relative;
 display: inline-block;
 width: 5vw;
 height: 5vh;
+margin:0;
 right: 0;
 background: none;
 border-radius: 50px;
+}
 
 input{
   opacity: 0;
@@ -257,15 +250,18 @@ input{
   height: 0;
  }
 
-input:checked{
-  .trigger{
-    background-color: #FD9C58;
-  }
+input:checked +.trigger{ 
+    background: #d10abd; 
 }
 
 input:checked +.trigger::before {
   transform: translateX(120%);
+  background: #343434;
+box-shadow:  12px 12px 24px #2c2c2c, 
+             -12px -12px 24px #3c3c3c;
 }
+
+
 
 
 
@@ -291,4 +287,23 @@ input:checked +.trigger::before {
   }
 }
 
+
+.Dark-mode{
+  position: absolute;
+  right: 0;
+  transform: translate(-60%, 50%);
+  display:flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  span{
+    margin-left: 1rem;
+    font-family: $font
+  }
+}
+
+@media(prefers-color-scheme: dark){
+  *{
+    background: $fontLight;
+  }
 }

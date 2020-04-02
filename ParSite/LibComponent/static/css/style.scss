@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+$content: 'ERROR';
+
+@mixin centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    @include centering();
+    background: rgb(5, 1, 10);
+    width: 100vw;
+    height: 100vh;
+}
+
+div{
+    @include centering();
+    height: 100%;
+}
+
+.glitch{
+    font-family: "Arial";
+    font-weight: 900;
+    font-size: 5em;
+    padding: 30px;
+    position: relative;
+    color: white;
+    &::after, &::before{
+        content: $content;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        padding: 30px;
+    }
+    &::before{
+        left: 5px;
+        text-shadow: -5px 0 rgba(15, 207, 207, 0.856);
+        animation: glitch-before 5s linear infinite alternate;
+    }
+    &::after{
+        left: -5px;
+        text-shadow: 5px 0 rgb(247, 19, 114);
+        animation: glitch-after 5s linear infinite alternate;
+    }
+
+}
+
+
+@keyframes glitch-before{
+    $steps: 30;
+
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip: rect((random(75)+random(75))+px, (random(390)+random(390)) + px, (random(75)+random(75))+px, random(50)+px);
+        }
+    }
+}
+
+@keyframes glitch-after{
+    $steps: 30;
+
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip: rect((random(75)+random(75))+px, (random(390)+random(390)) + px, (random(75)+random(75))+px, random(50)+px);
+        }
+    }
+}

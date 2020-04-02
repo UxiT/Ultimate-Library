@@ -289,6 +289,7 @@ span {
   display: inline-block;
   width: 5vw;
   height: 5vh;
+  margin: 0;
   right: 0;
   background: none;
   border-radius: 50px;
@@ -300,13 +301,16 @@ span {
   height: 0;
 }
 
-.checkbox input:checked .trigger {
-  background-color: #FD9C58;
+.checkbox input:checked + .trigger {
+  background: #d10abd;
 }
 
 .checkbox input:checked + .trigger::before {
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
+  background: #343434;
+  -webkit-box-shadow: 12px 12px 24px #2c2c2c,  -12px -12px 24px #3c3c3c;
+          box-shadow: 12px 12px 24px #2c2c2c,  -12px -12px 24px #3c3c3c;
 }
 
 .checkbox .trigger {
@@ -333,5 +337,30 @@ span {
           box-shadow: -3px -3px 8px #ffffff, 3px 3px 12px rgba(49, 65, 89, 0.43);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+}
+
+.Dark-mode {
+  position: absolute;
+  right: 0;
+  -webkit-transform: translate(-60%, 50%);
+          transform: translate(-60%, 50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Dark-mode span {
+  margin-left: 1rem;
+  font-family: "Brandon Grotesque";
 }
 /*# sourceMappingURL=style1.css.map */
