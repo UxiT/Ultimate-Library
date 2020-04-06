@@ -1,3 +1,5 @@
 from django.contrib import admin
+from LibComponent.models import Button
 
-# Register your models here.
+
+admin.site.register(Button)

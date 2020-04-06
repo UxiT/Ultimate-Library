@@ -4,9 +4,9 @@ export class Button extends Component {
   render() {
     let class_name = "preview button";
     return (
-      <div className={class_name}>
+      <button className={class_name}>
         <span className="md">Preview</span>
-      </div>
+      </button>
     );
   }
 }

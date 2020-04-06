@@ -56,7 +56,7 @@
           transform: translateX(-50%);
   width: 250px;
   height: 277px;
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44), inset -4px -4px 16px rgba(255, 255, 255, 0.9);
           box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44), inset -4px -4px 16px rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -76,7 +76,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32), -2px -2px 4px rgba(255, 255, 255, 0.75), -2px -2px 4px rgba(255, 255, 255, 0.75);
           box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32), -2px -2px 4px rgba(255, 255, 255, 0.75), -2px -2px 4px rgba(255, 255, 255, 0.75);
   border-radius: 50px;
@@ -151,27 +151,33 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ebf5fa;
+  background: #EBF5FA;
 }
 
 .button {
   cursor: pointer;
+  outline: none;
+  border: none;
   position: absolute;
   width: 200px;
   height: 100px;
   border-radius: 10px;
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
           box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
 }
 
-.button:hover {
-  background: #ebf5fa;
+.button:focus {
+  outline: none;
+}
+
+.button:active {
+  background: #EBF5FA;
   -webkit-box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
           box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
 }
 
-.button:hover .md {
+.button:active .md {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
@@ -180,24 +186,18 @@ span {
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
           box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
-/*
-.frame-inner:hover .Cards {
-  clip-path: circle(75%);
-  opacity: 1;
-}
-*/
 .dropdown {
   position: absolute;
   width: 60%;
   height: 20%;
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
           box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
   border-radius: 5px;
@@ -238,7 +238,7 @@ span {
 }
 
 #has-drop {
-  background: #ebf5fa;
+  background: #EBF5FA;
   -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
           box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
   cursor: pointer;
@@ -278,7 +278,7 @@ span {
 .triangle i {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  color: #ebf5fa;
+  color: #EBF5FA;
   background: none;
   -webkit-filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
           filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
@@ -295,17 +295,17 @@ span {
   border-radius: 50px;
 }
 
-.checkbox input {
+input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.checkbox input:checked + .trigger {
+input:checked + .trigger {
   background: #d10abd;
 }
 
-.checkbox input:checked + .trigger::before {
+input:checked + .trigger::before {
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
   background: #343434;
@@ -313,7 +313,7 @@ span {
           box-shadow: 12px 12px 24px #2c2c2c,  -12px -12px 24px #3c3c3c;
 }
 
-.checkbox .trigger {
+.trigger {
   cursor: pointer;
   position: absolute;
   width: 100%;
@@ -326,7 +326,7 @@ span {
   transition: 0.5s ease-in-out;
 }
 
-.checkbox .trigger:before {
+.trigger:before {
   position: absolute;
   content: '';
   height: 5vh;
@@ -362,5 +362,11 @@ span {
 .Dark-mode span {
   margin-left: 1rem;
   font-family: "Brandon Grotesque";
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    background: #434343;
+  }
 }
 /*# sourceMappingURL=style1.css.map */

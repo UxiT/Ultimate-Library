@@ -1,17 +1,18 @@
+
+$bgLight: #e7ecef;
+$innerback: #EBF5FA;
+$font: "Brandon Grotesque";
+$sliderLight: #E1EBF1;
+$sliderBackLight : #E7ECEF;
+$fontLight: #434343;
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background: $bgLight;
 }
-
-
-$bgLight: #e7ecef;
-$innerback: $innerback;
-$font: "Brandon Grotesque";
-$sliderLight: #E1EBF1;
-$sliderBackLight : #E7ECEF;
-$fontLight: #434343;
 
 .wrapper {
   position: absolute;
@@ -129,19 +130,26 @@ span {
 
 .button {
   cursor: pointer;
+  outline: none;
+  border:none;
   position: absolute;
   width: 200px;
   height: 100px;
   border-radius: 10px;
   background: $innerback;
   box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
-  &:hover {
+  &:focus{
+    outline:none;
+  }
+  
+  &:active {
     background: $innerback;
     box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
     .md {
       transform: scale(0.95);
     }
   }
+  
 }
 
 .Cards {
@@ -152,13 +160,6 @@ span {
   box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
   transition: 0.5s ease-in-out;
 }
-
-/*
-.frame-inner:hover .Cards {
-  clip-path: circle(75%);
-  opacity: 1;
-}
-*/
 
 .dropdown {
   position: absolute;

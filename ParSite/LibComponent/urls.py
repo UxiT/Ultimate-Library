@@ -1,6 +1,7 @@
 from django.urls import path, include
-from .views import componentView
+from .views import buttonView
 
 urlpatterns = [
-    path('',componentView )
+   path('element/buttons/', sheetList),
+   path('element/buttons/<str:slug>', buttonView.as_view, name = 'button_url')
 ]

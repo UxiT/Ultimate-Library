@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="{% static 'frontend/style1.css' %}" />
   </head>
   <body>
-    <div id="app"></div>
-
+    {% block content %}
+      <div id="app"></div>
+    {% block content %}
     <script src="{% static 'frontend/main.js' %}"></script>
     <script src="{% static 'frontend/drop.js' %}"></script>
     <script
