@@ -1,7 +1,7 @@
 from django.urls import path, include
-from .views import buttonView
+from .views import buttonView, glicth
 
 urlpatterns = [
-   path('element/buttons/', sheetList),
-   path('element/buttons/<str:slug>', buttonView.as_view, name = 'button_url')
+   path('glitch/', glicth),
+   path('elements/buttons/<str:slug>', buttonView.as_view, name = 'button_url')
 ]

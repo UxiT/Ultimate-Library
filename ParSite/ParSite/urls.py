@@ -9,7 +9,7 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('anything/', include('LibComponent.urls')),
     path('prog/', include('progress.urls')),
-    path('lib/', include('library.urls')),
+    #path('lib/', include('library.urls')),
 ]
 
 urlpatterns +=[
