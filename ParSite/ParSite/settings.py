@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'progress',
     'library',
     'frontend',
-    'LibComponent'
+    'LibComponent',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -40,7 +41,7 @@ ROOT_URLCONF = 'ParSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.abspath(__file__), 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

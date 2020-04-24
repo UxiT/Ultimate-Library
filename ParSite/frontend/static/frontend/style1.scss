@@ -1,17 +1,65 @@
 
-$bgLight: #e7ecef;
-$innerback: #EBF5FA;
+
+
 $font: "Brandon Grotesque";
 $sliderLight: #E1EBF1;
 $sliderBackLight : #E7ECEF;
 $fontLight: #434343;
 
+html{
+  --bg: #e7ecef;
+  --innerback: #EBF5FA;
+  --font: #434343;
+  --slider: #E1EBF1;
+  --lightShadow: #ffffff;
+  --frameDark: #b0b3b6;
+  --frameInnerD: rgba(148, 173, 191, 0.44);
+  --frameInnerL: rgba(255,255,255, 0.75);
+  --outline: #d4dde1;
+}
+
+html[data-theme = 'dark']{
+  --bg: #2F2F2F;
+  --innerback: #383838;
+  --font: #cfcccc;
+  --slider: #2f2f2f;
+  --lightShadow:rgba(49, 49, 49, 0.6);
+  --frameDark: #292929;
+  --frameInnerD: rgba(48,48,48, 0.44);
+  --frameInnerL: rgba(64,64,64, 0.86);
+  --outline:#2a2b2c;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: $bgLight;
+  background: var(--bg);
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  .auth{
+    transform: translateY(50%);
+    ul{
+      display: inline-flex;
+      flex-direction: row;
+    }
+  }
+}
+
+
+li{
+  list-style: none;
+  margin-left: 15px;
+  a{
+    color: var(--font);
+    &:visited,&:link{
+      text-decoration: none;
+      color: var(--font);
+    }
+  }
 }
 
 .wrapper {
@@ -34,8 +82,8 @@ $fontLight: #434343;
       width: inherit;
       height: inherit;
       transform: scale(1);
-      background: $bgLight;
-      box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
+      background: var(--bg);
+      box-shadow: 12px 12px 50px var(--frameDark), -12px -12px 70px var(--lightShadow);
       border-radius: 10px;
       .frame-inner {
         position: relative;
@@ -44,9 +92,9 @@ $fontLight: #434343;
         transform: translateX(-50%);
         width: 250px;
         height: 277px;
-        background: $innerback;
-        box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44),
-          inset -4px -4px 16px rgba(255, 255, 255, 0.9);
+        background: var(--innerback);
+        box-shadow: inset 4px 4px 20px var(--frameInnerD),
+          inset -4px -4px 16px var(--frameInnerL);
         border-radius: 10px;
       }
     }
@@ -61,12 +109,14 @@ $fontLight: #434343;
   position: absolute;
   align-items: center;
   justify-content: center;
-  background: $innerback;
-  box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32),
-    -2px -2px 4px rgba(255, 255, 255, 0.75),
-    -2px -2px 4px rgba(255, 255, 255, 0.75);
+  background: var(--innerback);
+  box-shadow: 2px 2px 8px var(--frameInnerD),
+    -2px -2px 4px var(--frameInnerL);
   border-radius: 50px;
   cursor: pointer;
+  svg,path{
+    fill: var(--font);
+  }
 }
 
 .prev {
@@ -95,7 +145,7 @@ svg {
 span {
   background: none;
   font-family: $font;
-  color: $fontLight;
+  color: var(--font);
 }
 
 .lg {
@@ -125,7 +175,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $innerback;
+  background: var(--innerback);
 }
 
 .button {
@@ -136,15 +186,15 @@ span {
   width: 200px;
   height: 100px;
   border-radius: 10px;
-  background: $innerback;
-  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--frameInnerL);
   &:focus{
     outline:none;
   }
   
   &:active {
-    background: $innerback;
-    box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+    background: var(--innerback);
+    box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
     .md {
       transform: scale(0.95);
     }
@@ -156,8 +206,8 @@ span {
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  background: $innerback;
-  box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  background: var(--innerback);
+  box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
   transition: 0.5s ease-in-out;
 }
 
@@ -165,8 +215,8 @@ span {
   position: absolute;
   width: 60%;
   height: 20%;
-  background: $innerback;
-  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -191,8 +241,8 @@ span {
 }
 
 #has-drop {
-  background: $innerback;
-  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
   cursor: pointer;
   opacity: 0;
   width: 100%;
@@ -206,7 +256,7 @@ span {
     z-index: 9;
     li {
       z-index: 9;
-      color: #434343;
+      color: var(--font);
       text-align: center;
       font-size: 1.5rem;
       font-family: $font;
@@ -225,9 +275,8 @@ span {
   margin-top: 5px;
   i {
     transform: scale(1.5);
-    color: $innerback;
+    color: var(--font);
     background: none;
-    filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
   }
 }
 
@@ -237,8 +286,8 @@ span {
 .checkbox{
 position: relative;
 display: inline-block;
-width: 5vw;
-height: 5vh;
+width: 70px;
+height: 28px;
 margin:0;
 right: 0;
 background: none;
@@ -252,14 +301,14 @@ input{
  }
 
 input:checked +.trigger{ 
-    background: #d10abd; 
+    background: #2e2e2e; 
 }
 
 input:checked +.trigger::before {
-  transform: translateX(120%);
-  background: #343434;
-box-shadow:  12px 12px 24px #2c2c2c, 
-             -12px -12px 24px #3c3c3c;
+  transform: translateX(42px);
+  background: var(--bg);
+  box-shadow:  2 2 4px rgba($color: #161616, $alpha: 0.75), 
+             -2px -2px 4px rgba($color: #434242, $alpha: 0.75);
 }
 
 
@@ -272,17 +321,17 @@ box-shadow:  12px 12px 24px #2c2c2c,
   width: 100%;
   height: 100%;
   background-color: $sliderBackLight ;
-  box-shadow:inset -3px -3px 10px #ffffff,inset 3px 3px 10px rgba($color: #000000, $alpha: 0.25) ;
+  box-shadow:inset -3px -3px 10px var(--lightShadow),inset 3px 3px 10px rgba($color: #000000, $alpha: 0.25) ;
   border-radius: 50px;
   transition: 0.5s ease-in-out;
   &:before{
     position: absolute;
     content:'';
-    height:5vh;
-    width: 5vh;
-    background: $sliderLight;
+    height: 28px;
+    width: 28px;
+    background: var(--slider);
     border-radius: 50px;
-    box-shadow: -3px -3px 8px #ffffff, 3px 3px 12px rgba($color: #314159, $alpha: 0.43);
+    box-shadow: -3px -3px 8px var(--lightShadow), 3px 3px 12px rgba($color: #314159, $alpha: 0.43);
     transition: 0.5s ease-in-out;
 
   }
@@ -303,8 +352,11 @@ box-shadow:  12px 12px 24px #2c2c2c,
   }
 }
 
-@media(prefers-color-scheme: dark){
-  *{
-    background: $fontLight;
-  }
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after{
+  transition: all 750ms, !important;
+  transition-delay: 0 !important;
 }

@@ -6,7 +6,7 @@ export class Switch extends Component {
             <div className="Dark-mode">
                 <span>Dark mode</span>
                 <label className="checkbox">
-                    <input type="checkbox"/>
+                    <input type="checkbox" name = 'mode' />
                     <span className="trigger"></span>
                 </label>
             </div>

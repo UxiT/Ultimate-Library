@@ -1,9 +1,72 @@
+html {
+  --bg: #e7ecef;
+  --innerback: #EBF5FA;
+  --font: #434343;
+  --slider: #E1EBF1;
+  --lightShadow: #ffffff;
+  --frameDark: #b0b3b6;
+  --frameInnerD: rgba(148, 173, 191, 0.44);
+  --frameInnerL: rgba(255,255,255, 0.75);
+  --outline: #d4dde1;
+}
+
+html[data-theme='dark'] {
+  --bg: #2F2F2F;
+  --innerback: #383838;
+  --font: #cfcccc;
+  --slider: #2f2f2f;
+  --lightShadow:rgba(49, 49, 49, 0.6);
+  --frameDark: #292929;
+  --frameInnerD: rgba(48,48,48, 0.44);
+  --frameInnerL: rgba(64,64,64, 0.86);
+  --outline:#2a2b2c;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #e7ecef;
+  background: var(--bg);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header .auth {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+header .auth ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+li {
+  list-style: none;
+  margin-left: 15px;
+}
+
+li a {
+  color: var(--font);
+}
+
+li a:visited, li a:link {
+  text-decoration: none;
+  color: var(--font);
 }
 
 .wrapper {
@@ -42,9 +105,9 @@
   height: inherit;
   -webkit-transform: scale(1);
           transform: scale(1);
-  background: #e7ecef;
-  -webkit-box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
-          box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
+  background: var(--bg);
+  -webkit-box-shadow: 12px 12px 50px var(--frameDark), -12px -12px 70px var(--lightShadow);
+          box-shadow: 12px 12px 50px var(--frameDark), -12px -12px 70px var(--lightShadow);
   border-radius: 10px;
 }
 
@@ -56,9 +119,9 @@
           transform: translateX(-50%);
   width: 250px;
   height: 277px;
-  background: #EBF5FA;
-  -webkit-box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44), inset -4px -4px 16px rgba(255, 255, 255, 0.9);
-          box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44), inset -4px -4px 16px rgba(255, 255, 255, 0.9);
+  background: var(--innerback);
+  -webkit-box-shadow: inset 4px 4px 20px var(--frameInnerD), inset -4px -4px 16px var(--frameInnerL);
+          box-shadow: inset 4px 4px 20px var(--frameInnerD), inset -4px -4px 16px var(--frameInnerL);
   border-radius: 10px;
 }
 
@@ -76,11 +139,15 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #EBF5FA;
-  -webkit-box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32), -2px -2px 4px rgba(255, 255, 255, 0.75), -2px -2px 4px rgba(255, 255, 255, 0.75);
-          box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32), -2px -2px 4px rgba(255, 255, 255, 0.75), -2px -2px 4px rgba(255, 255, 255, 0.75);
+  background: var(--innerback);
+  -webkit-box-shadow: 2px 2px 8px var(--frameInnerD), -2px -2px 4px var(--frameInnerL);
+          box-shadow: 2px 2px 8px var(--frameInnerD), -2px -2px 4px var(--frameInnerL);
   border-radius: 50px;
   cursor: pointer;
+}
+
+.switch svg, .switch path {
+  fill: var(--font);
 }
 
 .prev {
@@ -115,7 +182,7 @@ svg {
 span {
   background: none;
   font-family: "Brandon Grotesque";
-  color: #434343;
+  color: var(--font);
 }
 
 .lg {
@@ -151,7 +218,7 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #EBF5FA;
+  background: var(--innerback);
 }
 
 .button {
@@ -162,9 +229,9 @@ span {
   width: 200px;
   height: 100px;
   border-radius: 10px;
-  background: #EBF5FA;
-  -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
-          box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  -webkit-box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--frameInnerL);
+          box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--frameInnerL);
 }
 
 .button:focus {
@@ -172,9 +239,9 @@ span {
 }
 
 .button:active {
-  background: #EBF5FA;
-  -webkit-box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
-          box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  background: var(--innerback);
+  -webkit-box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
+          box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
 }
 
 .button:active .md {
@@ -186,9 +253,9 @@ span {
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  background: #EBF5FA;
-  -webkit-box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
-          box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  background: var(--innerback);
+  -webkit-box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
+          box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
@@ -197,9 +264,9 @@ span {
   position: absolute;
   width: 60%;
   height: 20%;
-  background: #EBF5FA;
-  -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
-          box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  -webkit-box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
+          box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,9 +305,9 @@ span {
 }
 
 #has-drop {
-  background: #EBF5FA;
-  -webkit-box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
-          box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  -webkit-box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
+          box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
   cursor: pointer;
   opacity: 0;
   width: 100%;
@@ -258,7 +325,7 @@ span {
 
 #has-drop ul li {
   z-index: 9;
-  color: #434343;
+  color: var(--font);
   text-align: center;
   font-size: 1.5rem;
   font-family: "Brandon Grotesque";
@@ -278,17 +345,15 @@ span {
 .triangle i {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  color: #EBF5FA;
+  color: var(--font);
   background: none;
-  -webkit-filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
-          filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
 }
 
 .checkbox {
   position: relative;
   display: inline-block;
-  width: 5vw;
-  height: 5vh;
+  width: 70px;
+  height: 28px;
   margin: 0;
   right: 0;
   background: none;
@@ -302,15 +367,15 @@ input {
 }
 
 input:checked + .trigger {
-  background: #d10abd;
+  background: #2e2e2e;
 }
 
 input:checked + .trigger::before {
-  -webkit-transform: translateX(120%);
-          transform: translateX(120%);
-  background: #343434;
-  -webkit-box-shadow: 12px 12px 24px #2c2c2c,  -12px -12px 24px #3c3c3c;
-          box-shadow: 12px 12px 24px #2c2c2c,  -12px -12px 24px #3c3c3c;
+  -webkit-transform: translateX(42px);
+          transform: translateX(42px);
+  background: var(--bg);
+  -webkit-box-shadow: 2 2 4px rgba(22, 22, 22, 0.75), -2px -2px 4px rgba(67, 66, 66, 0.75);
+          box-shadow: 2 2 4px rgba(22, 22, 22, 0.75), -2px -2px 4px rgba(67, 66, 66, 0.75);
 }
 
 .trigger {
@@ -319,8 +384,8 @@ input:checked + .trigger::before {
   width: 100%;
   height: 100%;
   background-color: #E7ECEF;
-  -webkit-box-shadow: inset -3px -3px 10px #ffffff, inset 3px 3px 10px rgba(0, 0, 0, 0.25);
-          box-shadow: inset -3px -3px 10px #ffffff, inset 3px 3px 10px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset -3px -3px 10px var(--lightShadow), inset 3px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: inset -3px -3px 10px var(--lightShadow), inset 3px 3px 10px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
@@ -329,12 +394,12 @@ input:checked + .trigger::before {
 .trigger:before {
   position: absolute;
   content: '';
-  height: 5vh;
-  width: 5vh;
-  background: #E1EBF1;
+  height: 28px;
+  width: 28px;
+  background: var(--slider);
   border-radius: 50px;
-  -webkit-box-shadow: -3px -3px 8px #ffffff, 3px 3px 12px rgba(49, 65, 89, 0.43);
-          box-shadow: -3px -3px 8px #ffffff, 3px 3px 12px rgba(49, 65, 89, 0.43);
+  -webkit-box-shadow: -3px -3px 8px var(--lightShadow), 3px 3px 12px rgba(49, 65, 89, 0.43);
+          box-shadow: -3px -3px 8px var(--lightShadow), 3px 3px 12px rgba(49, 65, 89, 0.43);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
@@ -364,9 +429,13 @@ input:checked + .trigger::before {
   font-family: "Brandon Grotesque";
 }
 
-@media (prefers-color-scheme: dark) {
-  * {
-    background: #434343;
-  }
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  -webkit-transition: all 750ms !important;
+  transition: all 750ms !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
 }
 /*# sourceMappingURL=style1.css.map */

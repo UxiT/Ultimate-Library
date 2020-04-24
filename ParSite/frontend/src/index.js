@@ -1,2 +1,1 @@
-import app from './components/App';
-import sheet from './components/Sheet';
+import App from './components/App';
