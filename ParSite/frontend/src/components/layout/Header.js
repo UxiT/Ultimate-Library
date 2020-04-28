@@ -11,12 +11,12 @@ export class Header extends Component {
                 <ul className ='auth-wrap'>
                     <li>
                         <span>
-                            <a href = "#">Sign in</a>
+                            <a href = "login">Sign in</a>
                          </span>
                     </li>
                     <li>
                         <span>
-                            <a href="#"> Sign up</a>
+                            <a href="register"> Sign up</a>
                         </span>
                     </li>
                 </ul>

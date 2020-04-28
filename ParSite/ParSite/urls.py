@@ -4,7 +4,7 @@ from django.urls import path, include
 from .views import index
 from rest_framework import serializers, routers, viewsets
 
-from accounts.views import *
+from accounts.views import login_view, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,7 +12,7 @@ urlpatterns = [
     path('anything/', include('LibComponent.urls')),
     path('prog/', include('progress.urls')),
     path('register/', register_view),
-    path('login/', login_view)
+    path('login/', login_view, name = 'login')
     #path('lib/', include('library.urls')),
 ]
 

@@ -1,6 +1,6 @@
 html {
-  --bg: #e7ecef;
-  --innerback: #EBF5FA;
+  --bg: #eeeeee;
+  --innerback: rgb(231, 231, 231);
   --font: #434343;
   --slider: #E1EBF1;
   --lightShadow: #ffffff;
@@ -15,8 +15,8 @@ html[data-theme='dark'] {
   --innerback: #383838;
   --font: #cfcccc;
   --slider: #2f2f2f;
-  --lightShadow:rgba(49, 49, 49, 0.6);
-  --frameDark: #292929;
+  --lightShadow:rgba(73, 73, 73, 0.6);
+  --frameDark: #1b1b1b;
   --frameInnerD: rgba(48,48,48, 0.44);
   --frameInnerL: rgba(64,64,64, 0.86);
   --outline:#2a2b2c;
@@ -106,8 +106,8 @@ li a:visited, li a:link {
   -webkit-transform: scale(1);
           transform: scale(1);
   background: var(--bg);
-  -webkit-box-shadow: 12px 12px 50px var(--frameDark), -12px -12px 70px var(--lightShadow);
-          box-shadow: 12px 12px 50px var(--frameDark), -12px -12px 70px var(--lightShadow);
+  -webkit-box-shadow: -8px -8px 20px var(--lightShadow), 8px 8px 20px var(--frameDark);
+          box-shadow: -8px -8px 20px var(--lightShadow), 8px 8px 20px var(--frameDark);
   border-radius: 10px;
 }
 
@@ -371,11 +371,12 @@ input:checked + .trigger {
 }
 
 input:checked + .trigger::before {
-  -webkit-transform: translateX(42px);
-          transform: translateX(42px);
-  background: var(--bg);
-  -webkit-box-shadow: 2 2 4px rgba(22, 22, 22, 0.75), -2px -2px 4px rgba(67, 66, 66, 0.75);
-          box-shadow: 2 2 4px rgba(22, 22, 22, 0.75), -2px -2px 4px rgba(67, 66, 66, 0.75);
+  width: 70px;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  background-color: #2af598;
+  -webkit-box-shadow: 0 0 30px #2AF598;
+          box-shadow: 0 0 30px #2AF598;
 }
 
 .trigger {
@@ -391,15 +392,18 @@ input:checked + .trigger::before {
   transition: 0.5s ease-in-out;
 }
 
-.trigger:before {
+.trigger::before {
   position: absolute;
   content: '';
-  height: 28px;
-  width: 28px;
-  background: var(--slider);
+  margin-top: 2px;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(42, 245, 152, 0);
+  -webkit-box-shadow: 0 0 0px #2AF598;
+          box-shadow: 0 0 0px #2AF598;
   border-radius: 50px;
-  -webkit-box-shadow: -3px -3px 8px var(--lightShadow), 3px 3px 12px rgba(49, 65, 89, 0.43);
-          box-shadow: -3px -3px 8px var(--lightShadow), 3px 3px 12px rgba(49, 65, 89, 0.43);
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }

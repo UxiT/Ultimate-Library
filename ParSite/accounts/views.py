@@ -1,16 +1,10 @@
 from django.shortcuts import render, redirect
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-'''
-from django.contrib.auth import(
-    authenticate,
-    get_user_model,
-    login,
-    logout
-)
-'''
+
 
 from .forms import UserLogin, UserRegister
+from .forms_2 import RegUser
 
 """
 def login_view(request):
@@ -31,9 +25,9 @@ def login_view(request):
     """
 
 def register_view(request):
-    form = UserCreationForm
+    form = RegUser
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegUser(request.POST)
         if form.is_valid:
             form.save()
     
