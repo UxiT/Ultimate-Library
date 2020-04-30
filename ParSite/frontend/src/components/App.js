@@ -2,10 +2,17 @@ import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import Nav from "./layout/Nav";
+import Switch from "./layout/Switch";
+import Header from "./layout/Header";
 
 class App extends Component {
   render() {
-    return <Nav />;
+    return(
+      <div className = 'void'>
+        <Header/>    
+        <Nav />
+       </div>
+       );
   }
 }
 

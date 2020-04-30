@@ -1,12 +1,66 @@
+
+
+
+$font: "Brandon Grotesque";
+$sliderLight: #E1EBF1;
+$sliderBackLight : #E7ECEF;
+$fontLight: #434343;
+
+html{
+  --bg: #eeeeee;
+  --innerback: rgb(231, 231, 231);
+  --font: #434343;
+  --slider: #E1EBF1;
+  --lightShadow: #ffffff;
+  --frameDark: #b0b3b6;
+  --frameInnerD: rgba(148, 173, 191, 0.44);
+  --frameInnerL: rgba(255,255,255, 0.75);
+  --outline: #d4dde1;
+}
+
+html[data-theme = 'dark']{
+  --bg: #2F2F2F;
+  --innerback: #383838;
+  --font: #cfcccc;
+  --slider: #2f2f2f;
+  --lightShadow:rgba(73, 73, 73, 0.6);
+  --frameDark: #1b1b1b;
+  --frameInnerD: rgba(48,48,48, 0.44);
+  --frameInnerL: rgba(64,64,64, 0.86);
+  --outline:#2a2b2c;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #e7ecef;
+  background: var(--bg);
 }
 
-$innerback: #ebf5fa;
-$font: "Brandon Grotesque";
+header{
+  display: flex;
+  flex-direction: row;
+  .auth{
+    transform: translateY(50%);
+    ul{
+      display: inline-flex;
+      flex-direction: row;
+    }
+  }
+}
+
+
+li{
+  list-style: none;
+  margin-left: 15px;
+  a{
+    color: var(--font);
+    &:visited,&:link{
+      text-decoration: none;
+      color: var(--font);
+    }
+  }
+}
 
 .wrapper {
   position: absolute;
@@ -15,18 +69,21 @@ $font: "Brandon Grotesque";
   transform: translate(-50%, -50%);
   display: inline-flex;
   width: 60vw;
+  height: 80%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-flow: wrap;
   .Frame {
+    margin-top: 10%;
     width: 266px;
     height: 376px;
     .frame {
       width: inherit;
       height: inherit;
       transform: scale(1);
-      background: #e7ecef;
-      box-shadow: 12px 12px 50px #b0b3b6, -12px -12px 70px #ffffff;
+      background: var(--bg);
+      box-shadow:-8px -8px 20px var(--lightShadow), 8px 8px 20px var(--frameDark);
       border-radius: 10px;
       .frame-inner {
         position: relative;
@@ -35,9 +92,9 @@ $font: "Brandon Grotesque";
         transform: translateX(-50%);
         width: 250px;
         height: 277px;
-        background: #ebf5fa;
-        box-shadow: inset 4px 4px 20px rgba(148, 173, 191, 0.44),
-          inset -4px -4px 16px rgba(255, 255, 255, 0.9);
+        background: var(--innerback);
+        box-shadow: inset 4px 4px 20px var(--frameInnerD),
+          inset -4px -4px 16px var(--frameInnerL);
         border-radius: 10px;
       }
     }
@@ -52,12 +109,14 @@ $font: "Brandon Grotesque";
   position: absolute;
   align-items: center;
   justify-content: center;
-  background: #ebf5fa;
-  box-shadow: 2px 2px 8px rgba(105, 121, 145, 0.32),
-    -2px -2px 4px rgba(255, 255, 255, 0.75),
-    -2px -2px 4px rgba(255, 255, 255, 0.75);
+  background: var(--innerback);
+  box-shadow: 2px 2px 8px var(--frameInnerD),
+    -2px -2px 4px var(--frameInnerL);
   border-radius: 50px;
   cursor: pointer;
+  svg,path{
+    fill: var(--font);
+  }
 }
 
 .prev {
@@ -86,7 +145,7 @@ svg {
 span {
   background: none;
   font-family: $font;
-  color: #434343;
+  color: var(--font);
 }
 
 .lg {
@@ -116,48 +175,48 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
+  background: var(--innerback);
 }
 
 .button {
   cursor: pointer;
+  outline: none;
+  border:none;
   position: absolute;
   width: 200px;
   height: 100px;
   border-radius: 10px;
-  background: #ebf5fa;
-  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
-  &:hover {
-    background: #ebf5fa;
-    box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--frameInnerL);
+  &:focus{
+    outline:none;
+  }
+  
+  &:active {
+    background: var(--innerback);
+    box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
     .md {
       transform: scale(0.95);
     }
   }
+  
 }
 
 .Cards {
   width: 200px;
   height: 150px;
   border-radius: 10px;
-  background: #ebf5fa;
-  box-shadow: inset 1px 1px 1px #d4dde1, inset -1px -1px 1px #d4dde1;
+  background: var(--innerback);
+  box-shadow: inset 1px 1px 1px var(--outline), inset -1px -1px 1px var(--outline);
   transition: 0.5s ease-in-out;
 }
-
-/*
-.frame-inner:hover .Cards {
-  clip-path: circle(75%);
-  opacity: 1;
-}
-*/
 
 .dropdown {
   position: absolute;
   width: 60%;
   height: 20%;
-  background: $innerback;
-  box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -176,6 +235,7 @@ span {
   }
 }
 
+<<<<<<< HEAD
 .left {
   box-shadow: -6px 0px 12px #ffffff;
 }
@@ -187,14 +247,38 @@ span {
   width: 100%;
   z-index: 9;
   box-shadow: 6px 6px 12px #c5ced2, -6px -6px 12px #ffffff;
+=======
+.letters{
+  width: 100%;
+  height: 50%;
+  background:none;
+}
+
+#has-drop {
+  background: var(--innerback);
+  box-shadow: 6px 6px 12px var(--frameInnerD), -6px -6px 12px var(--lightShadow);
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  z-index: 10;
+>>>>>>> 50622328e8ebc47e5aa7ae0f44dae4275aeda879
   ul {
+    margin:0;
     opacity: 1;
     list-style: none;
     background: none;
+<<<<<<< HEAD
 
     z-index: 9;
     li {
       color: #434343;
+=======
+    z-index: 200;
+    z-index: 9;
+    li {
+      z-index: 9;
+      color: var(--font);
+>>>>>>> 50622328e8ebc47e5aa7ae0f44dae4275aeda879
       text-align: center;
       font-size: 1.5rem;
       font-family: $font;
@@ -213,8 +297,90 @@ span {
   margin-top: 5px;
   i {
     transform: scale(1.5);
-    color: $innerback;
+    color: var(--font);
     background: none;
-    filter: drop-shadow(2px 2px 8px #000000) drop-shadow(-2px -2px 6px #ffffff);
   }
+}
+
+
+//Checkbox
+
+.checkbox{
+position: relative;
+display: inline-block;
+width: 70px;
+height: 28px;
+margin:0;
+right: 0;
+background: none;
+border-radius: 50px;
+}
+
+input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+
+input:checked +.trigger{ 
+    background: #2e2e2e; 
+}
+
+input:checked +.trigger::before {
+  width: 70px;
+  transform: translateX(0px);
+  background-color: rgba($color:#2AF598 , $alpha: 1.0);
+  box-shadow: 0 0 30px #2AF598;
+}
+
+
+
+
+
+.trigger{
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $sliderBackLight ;
+  box-shadow:inset -3px -3px 10px var(--lightShadow),inset 3px 3px 10px rgba($color: #000000, $alpha: 0.25) ;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  
+  &::before{
+    position: absolute;
+    content:'';
+    margin-top: 2px;
+    height: 25px;
+    width: 25px;
+    background-color: rgba($color: #2af598, $alpha: 0);
+    box-shadow: 0 0 0px #2AF598;
+    border-radius: 50px;
+    transform: translateX(-5px);
+    transition: 0.5s ease-in-out;
+  }
+}
+
+
+.Dark-mode{
+  position: absolute;
+  right: 0;
+  transform: translate(-60%, 50%);
+  display:flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  span{
+    margin-left: 1rem;
+    font-family: $font
+  }
+}
+
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after{
+  transition: all 750ms, !important;
+  transition-delay: 0 !important;
 }
