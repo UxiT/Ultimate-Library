@@ -11,6 +11,10 @@ export class Dropdown extends Component {
           </div>
         </div>
         <div id="has-drop">
+          <div className="top"></div>
+          <div className="right"></div>
+          <div className="left"></div>
+          <div className="bottom"></div>
           <ul>
             <li>Lorem</li>
             <li>Ipsum</li>
