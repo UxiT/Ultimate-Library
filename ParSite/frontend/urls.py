@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 
-urlpatterns= [
+urlpatterns = [
     path('', views.index),
-    path('element/buttons/', views.sheet)
+    path('buttons/', views.buttons)
 ]

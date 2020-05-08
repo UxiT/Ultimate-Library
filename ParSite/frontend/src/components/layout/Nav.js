@@ -5,7 +5,6 @@ import Cards from "./Cards";
 import Dropdown from "./Dropdown";
 import Letters from "./letters";
 
-
 export class Nav extends Component {
   render() {
     return (
@@ -17,7 +16,9 @@ export class Nav extends Component {
               <FrameContent name="preview button" triangle="no-triangle" />
             </div>
             <div className="TitleWrap">
-              <span className="lg"> Buttons </span>
+              <span className="lg">
+                <a href="/buttons">Buttons </a>
+              </span>
             </div>
           </div>
         </div>
@@ -29,7 +30,9 @@ export class Nav extends Component {
               <FrameContent name="preview button" triangle="no-triangle" />
             </div>
             <div className="TitleWrap">
-              <span className="lg"> Cards </span>
+              <span className="lg">
+                <a href="/cards">Cards </a>
+              </span>
             </div>
           </div>
         </div>
@@ -49,7 +52,7 @@ export class Nav extends Component {
         <div className="Frame">
           <div className="frame">
             <div className="frame-inner">
-              <Letters/>
+              <Letters />
               <FrameContent name="preview button" triangle="no-triangle" />
             </div>
             <div className="TitleWrap">
@@ -57,7 +60,6 @@ export class Nav extends Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }

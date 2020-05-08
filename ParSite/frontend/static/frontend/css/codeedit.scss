@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --bg: #eeeeee;
+  --innerback: rgb(231, 231, 231);
+  --font: #434343;
+  --slider: #e1ebf1;
+  --lightShadow: #ffffff;
+  --frameDark: #b0b3b6;
+  --frameInnerD: rgba(148, 173, 191, 0.44);
+  --frameInnerL: rgba(255, 255, 255, 0.75);
+  --outline: #d4dde1;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+header {
+  height: 60px;
+  background: var(--bg);
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.result,
+.code {
+  flex: 1;
+  height: 600px;
+  width: 50%;
+}
+
+code {
+  overflow-y: auto;
+}
+
+.result {
+  height: 100%;
+  background: var(--bg);
+}
+
+.label {
+  font-family: "Brandon Grotesque";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  color: var(--font);
+  font-weight: 500;
+  font-size: 1.3em;
+}
+.panel,
+textarea {
+  width: 100%;
+  padding: 12px;
+  height: 30vh;
+  border: none;
+  border-radius: 15px;
+  background: var(--bg);
+  box-shadow: -4px -4px 8px var(--lightShadow), 4px 4px 8px var(--frameInnerD);
+
+  font-size: 1.5em;
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
