@@ -17,11 +17,13 @@
             <h2>Login</h2>
             <form method="POST" action="">
                 {% csrf_token %}
-                {{ form }}
+                {{form.username}}
+                {{form.password}}
                 <input type="submit" value = 'Login'>
             </form>
         </div>
     </div>
+<script src = "{% static 'accounts/login_placeholders.js' %}"></script>
 </div>
 </body>
 </html>

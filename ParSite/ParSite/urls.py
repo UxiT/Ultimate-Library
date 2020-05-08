@@ -13,7 +13,6 @@ urlpatterns = [
     path('prog/', include('progress.urls')),
     path('register/', register_view),
     path('login/', login_view, name = 'login')
-    #path('lib/', include('library.urls')),
 ]
 
 urlpatterns +=[

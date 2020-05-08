@@ -8,13 +8,13 @@ html {
   width: 100%;
   height: 100%;
   --bg: #eeeeee;
-  --innerback: #EBF5FA;
+  --innerback: #ebf5fa;
   --font: #434343;
-  --slider: #E1EBF1;
+  --slider: #e1ebf1;
   --lightShadow: #ffffff;
   --frameDark: #b0b3b6;
   --frameInnerD: rgba(148, 173, 191, 0.44);
-  --frameInnerL: rgba(255,255,255, 0.75);
+  --frameInnerL: rgba(255, 255, 255, 0.75);
   --outline: #d4dde1;
 }
 
@@ -46,21 +46,23 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 60%;
 }
 
 .login-form {
   text-align: center;
   background: var(--bg);
-  width: 20%;
-  height: 70%;
+  width: 15%;
+  height: 50%;
   -webkit-box-shadow: -8px -8px 18px rgba(255, 255, 255, 0.8), 8px 8px 18px rgba(176, 179, 182, 0.75);
           box-shadow: -8px -8px 18px rgba(255, 255, 255, 0.8), 8px 8px 18px rgba(176, 179, 182, 0.75);
   border-radius: 15px;
 }
 
 .login-form h2 {
+  color: var(--font);
   margin-bottom: 15%;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 2rem;
 }
 
@@ -69,10 +71,13 @@ input {
   outline: none;
 }
 
-input[type='text'], input[type='password'], input[type='email'] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   background: var(--bg);
   border-radius: 10px;
   font-size: 1.1rem;
+  margin: 20px 0;
   padding: 2px 10px;
   -webkit-box-shadow: -2px -2px 8px white, 2px 2px 8px var(--frameInnerD);
           box-shadow: -2px -2px 8px white, 2px 2px 8px var(--frameInnerD);
@@ -95,16 +100,12 @@ input[type='text'], input[type='password'], input[type='email'] {
   height: 100%;
 }
 
-label {
-  margin-top: 30px;
-}
-
-input[type='submit'] {
+input[type="submit"] {
   cursor: pointer;
   margin-top: 30px;
   border-radius: 50px;
   background: var(--bg);
-  color: #2B86C5;
+  color: #2b86c5;
   font-size: 1.3rem;
   font-weight: 400;
   -webkit-box-shadow: -4px -4px 12px white, 4px 4px 8px rgba(97, 97, 97, 0.4);
